@@ -34,3 +34,10 @@ publishing {
         from(components["java"])
     }
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+    testLogging {
+        events("passed", "failed", "skipped")
+    }
+}
